@@ -8,7 +8,7 @@ os.chdir('C://Users//opara//PycharmProjects')  # CWD for my credentials.json
 listOfEmails = ['freemanoparaocha@gmail.com', 'newmanchidike@yahoo.com', 'prochess91@gmail.com',
                 'mglory360@ymail.com', 'patrickufoeze2@gail.com']
 print('welcome to Random chore assignment')
-print('Generating chores\n')
+print('Generating chores')
 
 
 def emailChore():
