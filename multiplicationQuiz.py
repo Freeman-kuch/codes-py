@@ -22,7 +22,7 @@ for questionNumber in range(numberOfQuestions):
     except pyip.RetryLimitException:
         print('Out of tries!')
     else:
-        # This block runs if no exceptions were raised in the try block.
+        #  This block runs if no exceptions were raised in the try block.
         print('Correct!')
         correctAnswers += 1
 time.sleep(1)  # Brief pause to let user see the result.
