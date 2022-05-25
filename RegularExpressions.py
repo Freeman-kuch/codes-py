@@ -1,6 +1,6 @@
 #! Python 3
 # Date Validation with regular expressions
-# we are writing regular expressions to detect the date in DD\MM\YYYY format
+# we are writing regular expressions to detect the date in DD\MM\YYYY format from clipboard
 import re, pyperclip
 
 dateRegex = re.compile(r'''(
