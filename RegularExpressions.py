@@ -10,30 +10,37 @@ dateRegex = re.compile(r'''(
                             [/]
                             [1-2]\d{3}            
                             )''', re.VERBOSE)
-mo = dateRegex.findall('today\'s date is 29/02/2001 and 28/13/2017')  # this is where the text to be scanned will be input as strs
+mo = dateRegex.findall('today\'s date is 29/02/2001 and 28/13/2017 and 31/09/2022')  # this is where the date(s) to be scanned will be input as strs
 # TODO : solve problem of single digits day and month, and double digit year
 # these variables assigned are for DD, MM,  YY and are also converted to integer
 day = 0
 month = 0
 year = 0
+print('Starting Date Validation ...')
 for i, d in enumerate(mo):
     day = int(mo[i][:2])
     month = int(mo[i][3:5])
     year = int(mo[i][6:])
     leapYearCheck = year % 4 == 0    # Leap years are every year evenly divisible by 4
-    # print(f'{day} {month} {year}')
-    # print(mo)
     # date validation
     if day > 31:
-        raise 'This Date in incorrect'
+        print(f'This Date{mo[i]} in incorrect')
         continue
     elif day == 31:
         if month == 4 or month == 6 or month == 9 or month == 11:
-            raise 'This month has 30-Days Only'
+            print(f'This month in {mo[i]} has 30-Days Only.')
+            continue
         elif month == 2:
-            raise 'This month has 28-Days Only unless this is a Leap-year which it has 29-Days'
+            print(f'This month in {mo[i]} has 28-Days Only unless this is a Leap-year which it has 29-Days.')
+            continue
     elif day == 29:
         if month == 2:
             if not leapYearCheck:
-                print('This month can\'t have 29-Days, it\'s not a leap year')
+                print(f'This month in {mo[i]} can\'t have 29-Days, it\'s not a leap year.')
+                continue
+    elif month > 12:
+        print(f'This month in {mo[i]} isn\'t valid(a year can have only 12Months).')
         continue
+    print(f'{mo[i]} is a valid Date.')
+
+print('\nDate Validation Done :)')
