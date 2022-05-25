@@ -1,16 +1,16 @@
 #! Python 3
 # Date Validation with regular expressions
 # we are writing regular expressions to detect the date in DD\MM\YYYY format
-import re
+import re, pyperclip
 
 dateRegex = re.compile(r'''(
                             [0-3]?\d                
-                            [/]
+                            [/,.-]
                             [0-1]?\d              
-                            [/]
+                            [/,.-]
                             [1-2]\d{3}            
                             )''', re.VERBOSE)
-mo = dateRegex.findall('today\'s date is 29/02/2001 and 28/13/2017 and 31/09/2022')  # this is where the date(s) to be scanned will be input as strs
+mo = dateRegex.findall(pyperclip.paste())  # this is where the date(s) copied to clipboard to be scanned will be input as strs
 # TODO : solve problem of single digits day and month, and double digit year
 # these variables assigned are for DD, MM,  YY and are also converted to integer
 day = 0
