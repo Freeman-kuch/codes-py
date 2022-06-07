@@ -5,8 +5,7 @@
 import random, ezgmail, os, time, datetime
 
 os.chdir('C://Users//opara//PycharmProjects')  # CWD for my credentials.json
-listOfEmails = ['freemanoparaocha@gmail.com', 'newmanchidike@yahoo.com', 'prochess91@gmail.com',
-                'patrickufoeze2@gmail.com', 'mglory360@gmail.com']
+listOfEmails = []  # This is where the E-mails to be mailed will be inputK
 print('welcome to Random chore assignment')
 print('Generating chores')
 
